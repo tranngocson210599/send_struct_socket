@@ -6,6 +6,13 @@
 #include <string.h> 
 #define PORT 8080 
 
+
+
+struct Packet {
+int id;
+int number;
+char data[256];
+};
 int main(int argc, char const *argv[]) 
 { 
 	int sock = 0, valread; 
@@ -33,7 +40,11 @@ int main(int argc, char const *argv[])
 		printf("\nConnection Failed \n"); 
 		return -1; 
 	} 
-	send(sock , hello , strlen(hello) , 0 ); 
+	struct Packet *s ;
+    s->id= htonl(1000);
+    s->number= htonl(7788);
+     memcpy(s->data, "MESSAGE", 7);
+	send(sock , s , sizeof(s), 0 ); 
 	printf("Hello message sent\n"); 
 	valread = read( sock , buffer, 1024); 
 	printf("%s\n",buffer ); 
