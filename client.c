@@ -122,16 +122,16 @@ int main()
 	else
 		printf("connected to the server..\n"); 
 
-// struct Task* t;
-// 	t->cCnt=1;
-// 	//t->cId=2;
-// 	t->mType=3;
-// 	t->data[0]='s';
-// 	t->cId[0]=5;
-// 	char * buff;
-// 	buff=serializeTask(buff,t);
-// 		for(int i=0;i<sizeof(buff)/sizeof(char);i++)
-// 		printf("%d",buff[i]);
+struct Task* t;
+	t->cCnt=1;
+	//t->cId=2;
+	t->mType=3;
+	t->data[0]='s';
+	t->cId[0]=5;
+	char * buff;
+	buff=serializeTask(buff,t);
+		for(int i=0;i<sizeof(buff)/sizeof(char);i++)
+		printf("%d",buff[i]);
 	// function for chat 
 	//func(sockfd); 
 
